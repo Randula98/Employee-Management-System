@@ -21,3 +21,21 @@ if exist "pnpm-lock.yaml" (
 ) else (
     echo No pnpm-lock.yaml file found.
 )
+
+rem Check if package-lock.json exists and
+if exist "package-lock.json" (
+    rem Remove the package-lock.json file
+    del "package-lock.json"
+    echo Package lock deleted.
+) else (
+    echo No package-lock.json file found.
+)
+
+rem Check if yarn.lock exists and
+if exist "yarn.lock" (
+    rem Remove the yarn.lock file
+    del "yarn.lock"
+    echo Yarn lock deleted.
+) else (
+    echo No yarn.lock file found.
+)
