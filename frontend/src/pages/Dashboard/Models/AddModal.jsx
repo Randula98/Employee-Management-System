@@ -5,8 +5,15 @@ import {
     Col,
     Row
 } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 import EmployeeService from '../../../services/employee.service';
+
+
+AddModal.propTypes = {
+    getEmployees: PropTypes.func.isRequired,
+    closeModal: PropTypes.func.isRequired
+};
 
 export default function AddModal({ getEmployees, closeModal }) {
 

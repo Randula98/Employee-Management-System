@@ -3,6 +3,11 @@ import {
     Col,
     Row
 } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+
+ViewModal.propTypes = {
+    employee: PropTypes.object.isRequired
+};
 
 export default function ViewModal({ employee }) {
 

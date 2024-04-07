@@ -110,12 +110,14 @@ export default function NavBar() {
                         {
                             localStorage.getItem('token') ?
                                 <Navbar.Text>
+                                    <Button variant="outline-secondary" onClick={() => {
+                                        window.location.href = '/dashboard';
+                                    }}>Dashboard</Button>{' '}
                                     <Button variant="outline-secondary" onClick={logout}>Logout</Button>{' '}
                                 </Navbar.Text>
                                 :
                                 <Navbar.Text>
                                     <Button variant="outline-success" onClick={handleShowRegister}>Register</Button>{' '}
-
                                     <Button variant="outline-success" onClick={handleShowLogin}>Login</Button>{' '}
                                 </Navbar.Text>
                         }
