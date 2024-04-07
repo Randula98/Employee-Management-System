@@ -111,53 +111,55 @@ export default function Dashboard() {
                             <h2 className="text-center">Employee List</h2>
                         </Col>
                     </Row>
-                    <Row>
-                        <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th style={{ width: '20rem' }}>Address</th>
-                                    <th>Age</th>
-                                    <th>ID Number</th>
-                                    <th>City</th>
-                                    <th style={{ width: '15rem' }}>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    employees.map((employee) => {
-                                        return (
-                                            <tr key={employee.id}>
-                                                <td>{employee.name}</td>
-                                                <td>{employee.address}</td>
-                                                <td>{employee.age}</td>
-                                                <td>{employee.nic}</td>
-                                                <td>{employee.city}</td>
-                                                <td>
-                                                    <Button
-                                                        variant="primary"
-                                                        onClick={() =>
-                                                            handleViewModalShow(employee)
-                                                        }>View</Button>{' '}
-                                                    <Button
-                                                        variant="success"
-                                                        onClick={() =>
-                                                            handleEditModalShow(employee)
-                                                        }
-                                                    >Edit</Button>{' '}
-                                                    <Button
-                                                        variant="danger"
-                                                        onClick={() =>
-                                                            deleteEmployee(employee._id)
-                                                        }
-                                                    >Delete</Button>
-                                                </td>
-                                            </tr>
-                                        )
-                                    })
-                                }
-                            </tbody>
-                        </Table>
+                    <Row >
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <Table striped bordered hover>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th style={{ width: '20rem' }}>Address</th>
+                                        <th>Age</th>
+                                        <th>ID Number</th>
+                                        <th>City</th>
+                                        <th style={{ width: '15rem' }}>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        employees.map((employee) => {
+                                            return (
+                                                <tr key={employee.id}>
+                                                    <td>{employee.name}</td>
+                                                    <td>{employee.address}</td>
+                                                    <td>{employee.age}</td>
+                                                    <td>{employee.nic}</td>
+                                                    <td>{employee.city}</td>
+                                                    <td>
+                                                        <Button
+                                                            variant="primary"
+                                                            onClick={() =>
+                                                                handleViewModalShow(employee)
+                                                            }>View</Button>{' '}
+                                                        <Button
+                                                            variant="success"
+                                                            onClick={() =>
+                                                                handleEditModalShow(employee)
+                                                            }
+                                                        >Edit</Button>{' '}
+                                                        <Button
+                                                            variant="danger"
+                                                            onClick={() =>
+                                                                deleteEmployee(employee._id)
+                                                            }
+                                                        >Delete</Button>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </Table>
+                        </div>
                     </Row>
                 </Row>
             </Container>

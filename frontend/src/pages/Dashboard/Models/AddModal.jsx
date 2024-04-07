@@ -21,11 +21,11 @@ export default function AddModal({ getEmployees, closeModal }) {
     }
 
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required('Name is required'),
-        address: Yup.string().required('Address is required'),
+        name: Yup.string().required('Name is required').min(3, 'Name must be at least 3 characters'),
+        address: Yup.string().required('Address is required').min(5, 'Address must be at least 5 characters'),
         age: Yup.string().required('Age is required'),
-        nic: Yup.string().required('NIC is required'),
-        city: Yup.string().required('City is required'),
+        nic: Yup.string().required('NIC is required').matches(/^[0-9]{9}[vVxX]$/, 'Invalid NIC'),
+        city: Yup.string().required('City is required').min(3, 'City must be at least 3 characters'),
         gender: Yup.string().required('Gender is required').oneOf(['male', 'female'], 'Gender must be either Male or Female'),
         lang: Yup.array().min(1, 'At least one language is required')
     });
@@ -70,7 +70,9 @@ export default function AddModal({ getEmployees, closeModal }) {
                         </div>
                         <div className="form-group">
                             <label>Age</label>
-                            <Field name="age" className={`form-control ${errors.age && touched.age ? 'is-invalid' : ''}`} />
+                            <Field name="age" className={`form-control ${errors.age && touched.age ? 'is-invalid' : ''}`} onInput={(e) => {
+                                e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                            }} />
                             <div className="invalid-feedback">{errors.age}</div>
                         </div>
                         <div className="form-group">

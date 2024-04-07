@@ -1,6 +1,4 @@
 import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-import Swal from 'sweetalert2';
 import {
     Col,
     Row
@@ -17,7 +15,6 @@ export default function ViewModal({ employee }) {
         gender: employee.gender,
         lang: employee.lang
     }
-
 
     return (
         <>
@@ -59,13 +56,13 @@ export default function ViewModal({ employee }) {
                                 </Col>
                                 <Col>
                                     <label>
-                                        <Field readOnly type="radio" name="gender" value="male" />
+                                        <Field disabled type="radio" name="gender" value="male" />
                                         {' '}Male
                                     </label>
                                 </Col>
                                 <Col>
                                     <label>
-                                        <Field readOnly type="radio" name="gender" value="female" />
+                                        <Field disabled type="radio" name="gender" value="female" />
                                         {' '}Female
                                     </label>
                                 </Col>
@@ -80,19 +77,19 @@ export default function ViewModal({ employee }) {
                                 </Col>
                                 <Col>
                                     <label>
-                                        <Field readOnly type="checkbox" name="lang" value="C#" />
+                                        <Field disabled type="checkbox" name="lang" value="C#" />
                                         {' '}C#
                                     </label>
                                 </Col>
                                 <Col>
                                     <label>
-                                        <Field readOnly type="checkbox" name="lang" value="Java" />
+                                        <Field disabled type="checkbox" name="lang" value="Java" />
                                         {' '}Java
                                     </label>
                                 </Col>
                                 <Col>
                                     <label>
-                                        <Field readOnly type="checkbox" name="lang" value="PHP" />
+                                        <Field disabled type="checkbox" name="lang" value="PHP" />
                                         {' '}PHP
                                     </label>
                                     <div className="invalid-feedback">{errors.lang}</div>
